@@ -1,5 +1,10 @@
 import torch
 import torch.nn as nn
+
+# python包的路径问题：在子目录下的文件开始执行时不会将工作目录添加到索引，需要调整索引环境变量。
+import os, sys
+sys.path.append(os.getcwd())
+
 from layers.Autoformer_EncDec import series_decomp
 from layers.Embed import DataEmbedding_wo_pos
 from layers.StandardNorm import Normalize
